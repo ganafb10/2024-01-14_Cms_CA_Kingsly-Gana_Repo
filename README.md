@@ -1,1 +1,1 @@
-# 2024-01-14_Cms_CA_Kingsly-Gana_Repo
+This CA requires dynamically retrieving  data from WordPress using WordPress REST API and displaying the rsults using JS
