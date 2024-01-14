@@ -36,9 +36,7 @@ export async function getProducts(options){
 
  }
 
- function getAttributes(){
-    const attributes = productData.attributes;
- }
+ 
 
  export function renderProducts(productData){
     const container = document.createElement("div");

@@ -3,9 +3,9 @@
 import { getProducts} from "./api/products.js";
 import { renderProducts } from "./api/products.js";
 
-//getProducts(null,false).then(console.log)
 
-//getPosts().then(console.log)
+
+
 
 async function productsPage(){
     const products = await getProducts();

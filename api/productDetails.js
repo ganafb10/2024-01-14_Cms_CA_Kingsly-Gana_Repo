@@ -1,28 +1,38 @@
+import { apiURL, wcURL } from "./constant.js";
+
+const currentURL = window.location.href;
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const id = urlParams.get('id');
+
+const singleProdPath = `${wcURL}/${id}`;
+
+const url = new URL(singleProdPath, apiURL);
 
 
-const url = new URL(location.href);
-
-const id = url.searchParams.get("id");
-
-
-/*async function fetchSingleProduct(id) {
+async function fetchSingleProduct() {
     
       const response = await fetch(url);
       
         const data = await response.json();
-        return data;
-  }*/
-  
- /* async function renderSingleProduct() {
-    const id = params.get("id");
-    if (!id) {
-      console.error("No 'id' parameter found in the url.");
-      return;
-    }
-    const singleData = await fetchSingleProduct(id);
-    const productWrapper = document.getElementById("product-wrapper");
-    productWrapper.innerHTML = JSON.stringify(singleData);
-   
+
+        renderSingleProduct(data);
   }
+
   
-  renderSingleProduct();*/
+function renderSingleProduct(data) {
+ const container = document.querySelector("#singleProd");
+ const img = container.querySelector('.prod-main-img');
+ const pricetag = container.querySelector('.prod-price-tag');
+ const titleTag = container.querySelector(".card-body")
+
+ titleTag.textContent = data.name;
+ img.src = data.images[0].src;
+ img.srcset = data.images[0].srcset;
+ pricetag.innerHTML = `${(data.prices.price/100).toFixed(2)} NOK`
+ 
+ 
+}
+
+fetchSingleProduct();
