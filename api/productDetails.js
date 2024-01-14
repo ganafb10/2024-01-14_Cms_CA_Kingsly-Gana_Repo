@@ -1,12 +1,10 @@
 
-import { apiURL,wcURL } from "./constant";
-
 
 const url = new URL(location.href);
 
 const id = url.searchParams.get("id");
 
-console.log(id)
+
 /*async function fetchSingleProduct(id) {
     
       const response = await fetch(url);
